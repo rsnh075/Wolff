@@ -1,0 +1,318 @@
+body { transform: translate3d(0,0,0); } /* does nothing except make transitions run smoother cause of accessing computers hardware */
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+	background: $selectioncolor;
+	color: $selectiontextcolor;
+}
+::-moz-selection {
+	background: $selectioncolor;
+	color: $selectiontextcolor;
+}
+
+mark {
+	background: $selectioncolor;
+	color: $selectiontextcolor;
+}
+
+img {
+	max-width:100%;
+	display: inline-block;
+	border: 0;
+}
+
+a {
+	text-decoration: underline;
+	color: $textcolor;
+	&:hover,
+	&:active,
+	&:focus	{
+		color: $headcolor;
+		text-decoration: none;
+	}
+}
+.promo a {
+	color: $promotextlinkcolor;
+	&:hover,
+	&:active,
+	&:focus	{
+		color: $promohoverlinkcolor;
+	}
+}
+
+h1 { margin: 0 0 0.35em 0; }
+h3 { margin: 0 0 0.15em 0; }
+
+p,
+pre {
+	margin: 0 0 1em 0;
+}
+
+ol,
+ul {
+	margin: 0 0 1em 0;
+}
+
+/* ======= HEADER ======== */
+
+#container-logo {
+	max-width: 834px;
+	margin: 0 auto;
+    content: " ";
+    display: block;
+    clear: both;
+	img {
+		display: block;
+	}
+	a #logo {
+		float: left;
+	}
+	a #bestedierenarts-logo {
+		float: right;
+	    margin-top: 34px;
+	    margin-right: 44px;
+	    padding: 10px;
+	    border: 2px solid $headcolor;
+	    box-shadow: 0 0 0 10px rgba(130, 188, 0, 0.5);
+	    max-width: 200px;
+	    @media only screen and (max-width: 933px) {
+	    	display: none;
+	    }
+	}
+}
+a #aside-bestedierenarts-logo {
+	padding-top: 14px;
+	margin-top: 24px;
+	margin-bottom: 14px;
+	border-top: 1px solid $menubgcolor;
+	width: 100%;
+    @media only screen and (min-width: 934px) {
+    	display: none;
+    }
+}
+
+.wrapper {
+	position: relative;
+	overflow: visible;
+}
+#bglogo-img {
+	position: absolute;
+	top: $baselineheight;
+	left:50%;
+	@include transform( translate(-50%, 0) );
+	padding-bottom: $baselineheight;
+}
+div#container-animals {
+	margin: 0 auto;
+	position: relative;
+	top: 0;
+	display: table;
+	content: " ";
+	clear: both;
+}
+
+/* ======= NAV ======== */
+
+@import 'responsivemobilemenu.scss';
+
+/* ======= CONTENT ======== */
+
+.container {
+	padding: $baselineheight $baselineheight 0 $baselineheight;
+	margin: 0 auto;
+	border: 2px solid $headcolor;
+	position: relative;
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+#content {
+	max-width: 782px;
+	margin: 0 auto;
+	padding: 0 $baselineheight;
+	position: relative;
+	margin: 0 auto;
+    content: " ";
+    display: block;
+    clear: both;
+
+}
+.main-content {
+	background-color: white;
+	display: inline-block;
+	max-width: 400px;
+	&.big {
+		max-width: 100%;
+	}
+	-webkit-box-shadow: 0 0 0 10px rgba(130, 188, 0, 0.5);
+	-moz-box-shadow: 0 0 0 10px rgba(130, 188, 0, 0.5);
+	box-shadow: 0 0 0 10px rgba(130, 188, 0, 0.5);
+	margin: $baselineheight $baselineheight/2;
+}
+
+.sidebar {
+	display: inline-block;
+	background-color: white;
+	position: relative;
+	vertical-align: top;
+	max-width: 280px;
+	margin: $baselineheight $baselineheight/2;
+}
+ul {
+	list-style-type: disc;
+    padding-left: 1em;
+    margin: 0 0 1em 0;
+    li {
+    	color: $textcolor;
+    }
+}
+.sidebar ul {
+	margin-top: 0;
+}
+@media only screen and (max-width: 772px) {
+	.main-content, .sidebar {
+		display: block;
+		margin: $baselineheight auto;
+		max-width: 400px;
+	}
+}
+
+.one-img {
+	border: 2px solid $headcolor;
+	&.noborder {
+		border: 0;
+	}
+}
+.two-images {
+	-webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    margin-bottom: 14px;
+    @media only screen and (max-width: 426px) {
+    	display: inline-block;
+    }
+}
+.imgL, .imgR {
+	-webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+	border: 2px solid $headcolor;
+	@media only screen and (max-width: 426px) {
+		width: 100%;
+		max-width: initial;
+	}
+}
+.imgR {
+	float: right;
+}
+
+.three-column {
+	width: 100%;
+	color: $textcolor;
+	td:nth-child(1) {
+		width: 70%;
+		vertical-align: top;
+	}
+	td:nth-child(2) {
+		width: 10%;
+		text-align: right;
+		vertical-align: top;
+	}
+	td:nth-child(3) {
+		width: 20%;
+		vertical-align: top;
+		text-align: left;
+	}
+}
+
+caption {
+	text-align: left;
+	padding-top: 1em
+}
+
+/* ===== Google Maps window ===== */
+
+html, body, #map-canvas {
+	min-height: 300px;
+	max-width: 100%;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: $baselineheight;
+}
+
+/* ===== Button ===== */
+.button {
+	background-color: $buttoncolor;
+	color: $buttontextcolor;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: $basefontsize/2.2 $basefontsize;
+	margin-top: $basefontsize/2.2;
+//	white-space: nowrap;
+	display: inline-block;
+	width: 100%;
+	&.small {
+		width: auto;
+	}
+	&:hover,&:active,&:focus {
+		color: $buttontextcolor;
+		background-color:$buttonhover;
+		text-shadow:1px 1px 1px $buttontextshadow;
+	}
+}
+.sidebar .button {
+	background-color: $buttonhover;
+	&:hover,&:active,&:focus {
+		background-color: $buttoncolor;
+	}
+}
+
+/* ==== PROMO ==== */
+.promo {
+	background-color: $promobgcolor;
+	color: $promocolor;
+	padding: $basefontsize/2.2 $basefontsize;
+	margin-top: $basefontsize/5 ;
+	@include transition( all $duration/2 cubic-bezier(0.25, 0.46, 0.45, 0.94) );
+	&:hover {
+		@include transform( scale(1.03) );
+  		z-index: 100;
+	}
+}
+
+.cf:before,
+.cf:after {
+   
+}
+
+.cf:after {
+   
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+    &:after,
+    &:before {
+    	content: " "; /* 1 */
+    	display: table; /* 2 */
+    }
+    &:after {
+    	clear: both;
+    }
+}
